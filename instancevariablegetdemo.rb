@@ -6,5 +6,11 @@ class InstanceVariableGetDemo
 end
 
 ins = InstanceVariableGetDemo.new(5, 6)
-puts ins.instance_variable_get(:@a1)
-puts ins.instance_variable_get(:@a2)
+puts "before instance_variable_set @a1 =#{ins.instance_variable_get(:@a1)}"
+puts "before instance_variable_set @a2 =#{ins.instance_variable_get(:@a2)}"
+
+ins.instance_variable_set(:@a1, 8)
+ins.instance_variable_set(:@a2, 10)
+
+puts "after instance_variable_set @a1 =#{ins.instance_variable_get(:@a1)}"
+puts "after instance_variable_set @a2 =#{ins.instance_variable_get(:@a2)}"
